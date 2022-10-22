@@ -14,13 +14,11 @@ import java.util.Properties;
 public class HealthCheckController {
 
     @GetMapping("version")
-    public ResponseEntity<String> status() throws IOException {
+    public ResponseEntity<String> status() throws IOException
+    {
         Properties properties = new Properties();
         InputStream inputStream = getClass().getClassLoader().getResourceAsStream("application.yml");
         properties.load(inputStream);
-
-        return ResponseEntity.ok(
-                properties.getProperty("build.name") + " - " + properties.getProperty("build.version")
-        );
+        return ResponseEntity.ok(properties.getProperty("build.name") + " - " + properties.getProperty("build.version"));
     }
 }
