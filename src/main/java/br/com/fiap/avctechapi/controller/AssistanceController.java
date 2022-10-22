@@ -26,5 +26,4 @@ public class AssistanceController {
         List<AssistDto> list = assistanceApplication.getAssists();
         return ResponseEntity.ok(list);
     }
-
 }
